@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Schoolbox+",
+    "description": "A helper extension for schoolbox.",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup/index.html",
+        "default_icon": "icon.png"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "index.js"
+            ],
+            "matches": [
+                "https://schoolbox.wesley.wa.edu.au/learning/grades/*"
+            ]
+        }
+    ],
+    "permissions": [
+        "activeTab"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "embedded.js"
+            ],
+            "matches": [
+                "https://schoolbox.wesley.wa.edu.au/*"
+            ]
+        }
+    ]
+}
