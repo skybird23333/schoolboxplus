@@ -7,4 +7,4 @@ This is a work in progress.
 **Schoolbox+ will interact with some of your data in order for its features to be functional. It does not do anything else with the data other than its intended use. The source code is always available for inspection.**
 
 ## Installation
-Because the Chroome Web Store Developer registeration fee($5) is unaffordable, you will have to install the extension locally.
+Because the Chrome Web Store Developer registeration fee($5) is unaffordable, you will have to install the extension locally.
