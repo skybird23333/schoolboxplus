@@ -1,14 +1,3 @@
-// async function init() {
-//     const url = chrome.runtime.getURL('template.html')
-//     console.log(url)
-//     //load in the overlay from the extension
-//     const res = await fetch(url)
-//     //yes it uses fetch. no its not my issue if you have an outdated browser.
-//     document.body.innerHTML += await res.text()
-// }
-
-// init()
-
 const checkElementLoadedInterval = setInterval(checkPageLoad, 1000)
 
 // Check whether the page(or the function we need) has been loaded/initialized
