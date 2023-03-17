@@ -25,7 +25,7 @@ if(document.querySelector('meta[name="author"]').content == 'Schoolbox Pty Ltd')
         }
     }
     
-    if(window.location.pathname.match(/\//)) {
+    if(window.location.pathname === '/') {
         console.log('Page recognised: Index')
         const script = document.createElement("script");
         script.setAttribute('src', chrome.runtime.getURL('embeds/index.js'))
