@@ -13,23 +13,28 @@
                 "index.js"
             ],
             "matches": [
-                "https://schoolbox.wesley.wa.edu.au/learning/grades/*"
+                "https://*/*"
             ]
         }
     ],
     "permissions": [
         "activeTab"
     ],
-    "background": {
-        "service_worker": "background.js"
-    },
     "web_accessible_resources": [
         {
             "resources": [
-                "embedded.js"
+                "embeds/grades.js"
             ],
             "matches": [
-                "https://schoolbox.wesley.wa.edu.au/*"
+                "https://*/*"
+            ]
+        },
+        {
+            "resources": [
+                "embeds/index.js"
+            ],
+            "matches": [
+                "https://*/*"
             ]
         }
     ]

@@ -1,10 +1,3 @@
-async function fetchSettings() {
-    response = await chrome.runtime.sendMessage({type: 'Settings', page: 'marks'});
-    console.log(response);
-}
-
-fetchSettings();
-
 //wrap the series calculation function so that we can get the data
 const _calcfunc = $.fn.reportCardBoxplotCalculateAllSeriesData
 
