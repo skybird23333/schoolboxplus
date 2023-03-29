@@ -16,12 +16,12 @@ if (query.length) {
     */
     const parentContainer = query[0]
 
-    parentContainer.children[0].children[0].style.height = '140px'
+    const classInfo = parentContainer.children[0].children[0].innerText
     const color = parentContainer.children[0].children[0].style.background
 
 
     const progressText = document.createElement('div')
-    progressText.innerHTML = `${remainingTime} left`
+    progressText.innerHTML = `<b>${classInfo}</b> ${remainingTime} left(${classProgress.toFixed(1)}%)`
 
     const progressBarElapsed = document.createElement('div')
     progressBarElapsed.setAttribute('style', `position: absolute;\
@@ -50,17 +50,23 @@ if (query.length) {
     const timetableElement = $('div.small-12.columns div section:has(div.scrollable.show-for-medium-up)')[0]
     timetableElement.appendChild(progressContainer)
 
-    setInterval(() => {
+    const interval = setInterval(() => {
         const timeText = $('.show-for-medium-up .timetable-period-active time')[0].innerHTML
         const startTime = dayjs(timeText.split('–')[0], 'hh:mma')
         const endTime = dayjs(timeText.split('–')[1], 'hh:mma')
         const classDuration = dayjs(startTime, '').diff(endTime)
         const remainingDuration = dayjs().diff(endTime)
         const classProgress = (-classDuration + remainingDuration) / (-classDuration) * 100
-        console.log(endTime)
+        if(classProgress >= 100) {
+            clearInterval(interval)
+            progressText.innerHTML = `Out of sync! Refresh page to reload the timer.`
+            progressBarElapsed.style.width = `0%`
+            progressBarRemaining.style.width = `0%`
+            return
+        }
         const remainingTime = dayjs(endTime).subtract(dayjs()).format('mm:ss')
 
-        progressText.innerHTML = `${remainingTime} left`
+        progressText.innerHTML = `<b>${classInfo}</b> ${remainingTime} left(${classProgress.toFixed(1)}%)`
         progressBarElapsed.style.width = `${classProgress}%`
         progressBarRemaining.style.width = `${100 - classProgress}%`
     }, 1000)
