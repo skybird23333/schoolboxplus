@@ -29,7 +29,7 @@ if (query.length) {
     width: ${classProgress}%;\
     height: 20px;\
     background-color: ${color};\
-    z-index: -1;
+    z-index: 1;
     `)
     const progressBarRemaining = document.createElement('div')
     progressBarRemaining.setAttribute('style', `position: absolute;\
@@ -37,7 +37,7 @@ if (query.length) {
     width: ${100 - classProgress}%;\
     height: 20px;\
     background-color: gray;\
-    z-index: -1;
+    z-index: 1;
     `)
 
     const progressContainer = document.createElement('div')
