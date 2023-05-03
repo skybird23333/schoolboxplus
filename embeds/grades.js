@@ -24,10 +24,17 @@ $.fn.reportCardBoxplotCalculateAllSeriesData = function () {
         const averageScores = []
         for(let i = 0; i<=4; i++) {//for each of 5 figure summary
             let totalScores = 0
+            let skippedAssessments = 0 //amount of skipped assessments
+
+            //calculate sum of all scores for this figure
             result.allGraphData.forEach((assessment) => { //for each assessment
+                if(assessment[0] === null && assessment[2] === null && assessment[4] === null) {
+                    skippedAssessments++
+                    return
+                }
                 totalScores += assessment[i]
             })
-            averageScores.push(totalScores / result.allGraphData.length)
+            averageScores.push(totalScores / (result.allGraphData.length - skippedAssessments))
         }
         result.allGraphData.push(averageScores) //push it into the result
     }
