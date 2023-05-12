@@ -9,6 +9,8 @@ This is a work in progress.
 ## Installation/update
 Because ~~the Chrome Web Store Developer registeration fee($5) is unaffordable~~ I have paid the fee but the approval process is far too tedius, you will have to install the extension locally.
 
+> **NOTE**: If you are updating, make sure to also reload the extension at the extensions page/restart chrome for changes to take effect.
+
 ### 1. Getting the files
 If you have Git or Github Desktop installed, preferably clone the repository instead. You can then pull later updates.
 
