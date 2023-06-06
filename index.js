@@ -69,7 +69,6 @@ const themeStyles = `
 /* The above doesn't seem to cover specific components on each page(i.e.
    timetable, news section, any body sect which have colours hard coded into them
 */
-.timetable,
 .timetable th,
 .fc .fc-cell-shaded,
 .fc-list-event,
@@ -102,12 +101,19 @@ body {
 .left-off-canvas-menu ul.off-canvas-list li h3, .left-off-canvas-menu ul.off-canvas-list li label .unit-heading, label .left-off-canvas-menu ul.off-canvas-list li .unit-heading, .left-off-canvas-menu ul.off-canvas-list li h4 {
     color: var(--foreground-primary)
 }
-
+/* Force timetable font color to be black since timetable colour isnt altered*/
+table.timetable tbody tr td div.timetable-subject *,
+table.timetable tbody tr td div.timetable-subject-active .timetable-subject *,
+table.timetable tbody tr td div.timetable-subject a,
+table.timetable tbody tr td div.timetable-subject-active .timetable-subject a
+{
+    color: black !important;
+}
 
 `
 
 //Check if the current page is schoolbox
-if(document.querySelector('meta[name="author"]').content == 'Schoolbox Pty Ltd') {
+if(document.querySelector('meta[name="author"]')?.content == 'Schoolbox Pty Ltd') {
     const style = document.createElement("style");
     style.innerText = themeStyles
     document.documentElement.appendChild(style)
