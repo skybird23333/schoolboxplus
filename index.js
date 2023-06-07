@@ -79,7 +79,7 @@ table tr th,
 table tr td,
 section,
 .breadcrumb li.active span:not([href]),
-table {
+table, dl {
     background-color: var(--background-secondary) !important;
     color: var(--foreground-primary) !important;
 }
@@ -108,6 +108,20 @@ table.timetable tbody tr td div.timetable-subject a,
 table.timetable tbody tr td div.timetable-subject-active .timetable-subject a
 {
     color: black !important;
+}
+
+blockquote {
+    color: var(--foreground-primary);
+    background: var(--background-tertiary);
+}
+
+textarea, input, select {
+    color: var(--foreground-primary) !important; 
+    background: var(--background-primary) !important;
+}
+
+textarea:hover, input:hover, select:hover {
+    background: var(--background-tertiary) !important;
 }
 
 `
