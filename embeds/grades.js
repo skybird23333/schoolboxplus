@@ -84,7 +84,7 @@ $.fn.reportCardBoxplotRender = function () {
                         Schoolbox+ Rank Estimation
                     </b><br>
                     You are better than<br>
-                    <span><span style="font-size: larger;">${estimatedRank}%</span>, ${25*fromRange}% to ${25*toRange}%</span><br>
+                    <span><span style="font-size: large;">${estimatedRank}%</span>, ${25*fromRange}% to ${25*toRange}%</span><br>
                     of students in this course.
                     <br>
                     <b>Your grade:</b>
